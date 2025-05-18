@@ -65,6 +65,16 @@ body {
 .btn:hover {
   background-color: var(--accent);
   color: #0b0b0b;
+  transform: translateY(-2px); /* Add subtle lift effect */
+}
+
+/* Menu toggle icon animation */
+#menu-toggle svg {
+  transition: transform 0.3s ease-in-out;
+}
+
+#menu-toggle.menu-open svg {
+  transform: rotate(90deg);
 }
 
 /* 5. Accessibility: Reduced Motion */
