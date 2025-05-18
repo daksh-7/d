@@ -20,6 +20,7 @@
 <link rel="preload" href="assets/fonts/poppins-v23-latin-600.woff2" as="font" type="font/woff2" crossorigin>
 
 <link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dakshbabbar.com/">
@@ -61,106 +62,169 @@
 </script>
 </head>
 
-<body class="font-sans bg-black text-gray-100"> 
+<body class="font-sans bg-black text-gray-100">
+
 <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:p-4 focus:bg-black focus:text-accent focus:z-50">Skip to main content</a>
 
-<header class="fixed inset-x-0 top-0 z-40 bg-black/60 backdrop-blur-md">
-  <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 text-sm uppercase tracking-wide">
-    <a href="#home" class="font-semibold text-accent transition-colors hover:text-white">daksh</a>
+<header class="fixed inset-x-0 top-0 z-40 bg-black/60 backdrop-blur-md transition-all duration-300">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 text-sm uppercase tracking-wide">
+    <a href="#home" class="font-semibold text-accent transition-colors hover:text-white group">
+      <span class="relative inline-block overflow-hidden">
+        daksh
+        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
+      </span>
+    </a>
     <nav class="hidden gap-8 md:flex" aria-label="Main navigation">
-      <a href="#about" class="transition-colors duration-200 hover:text-accent">About</a>
-      <a href="#achievements" class="transition-colors duration-200 hover:text-accent">Achievements</a>
-      <a href="#leadership" class="transition-colors duration-200 hover:text-accent">Leadership</a>
-      <a href="#extracurricular" class="transition-colors duration-200 hover:text-accent">Extracurricular</a>
-      <a href="#contact" class="transition-colors duration-200 hover:text-accent">Contact</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#achievements" class="nav-link">Achievements</a>
+      <a href="#leadership" class="nav-link">Leadership</a>
+      <a href="#extracurricular" class="nav-link">Extracurricular</a>
+      <a href="#contact" class="nav-link">Contact</a>
     </nav>
-    <button id="menu-toggle" class="md:hidden" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
-        <path d="M3 12h18M3 6h18M3 18h18"/>
-      </svg>
+    <button id="menu-toggle" class="md:hidden focus:outline-none" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+      <div class="w-6 h-5 flex flex-col justify-between">
+        <span class="w-full h-0.5 bg-white transition-all duration-300 transform origin-left"></span>
+        <span class="w-full h-0.5 bg-white transition-all duration-300"></span>
+        <span class="w-full h-0.5 bg-white transition-all duration-300 transform origin-left"></span>
+      </div>
     </button>
   </div>
-  <div id="mobile-menu" class="hidden bg-black/90 px-4 py-4 md:hidden">
-    <nav class="flex flex-col space-y-4 text-sm uppercase tracking-wide" aria-label="Mobile navigation">
-      <a href="#about" class="transition-colors duration-200 hover:text-accent">About</a>
-      <a href="#achievements" class="transition-colors duration-200 hover:text-accent">Achievements</a>
-      <a href="#leadership" class="transition-colors duration-200 hover:text-accent">Leadership</a>
-      <a href="#extracurricular" class="transition-colors duration-200 hover:text-accent">Extracurricular</a>
-      <a href="#contact" class="transition-colors duration-200 hover:text-accent">Contact</a>
+  <div id="mobile-menu" class="hidden bg-black/95 px-6 py-6 md:hidden">
+    <nav class="flex flex-col space-y-6 text-sm uppercase tracking-wide" aria-label="Mobile navigation">
+      <a href="#about" class="mobile-nav-link">About</a>
+      <a href="#achievements" class="mobile-nav-link">Achievements</a>
+      <a href="#leadership" class="mobile-nav-link">Leadership</a>
+      <a href="#extracurricular" class="mobile-nav-link">Extracurricular</a>
+      <a href="#contact" class="mobile-nav-link">Contact</a>
     </nav>
   </div>
 </header>
 
-<main id="main-content" class="space-y-12 pt-24">
-  <section id="home" class="mx-auto flex min-h-[60vh] max-w-6xl flex-col items-center justify-center px-4 text-center animate-fade-in">
-    <h1 class="mb-4 text-4xl font-extrabold sm:text-6xl">
-      <span class="text-accent">Daksh</span> Babbar
+<main id="main-content" class="space-y-24 pt-32">
+  <section id="home" class="mx-auto flex min-h-[90vh] max-w-6xl flex-col items-center justify-center px-6 text-center">
+    <h1 class="mb-6 font-extrabold tracking-tight">
+      <span class="text-accent text-5xl sm:text-7xl md:text-8xl block mb-2" data-aos="fade-up" data-aos-duration="800">Daksh</span>
+      <span class="text-white text-4xl sm:text-6xl md:text-7xl block" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">Babbar</span>
     </h1>
-    <p class="max-w-xl text-lg text-gray-300 sm:text-xl"> International-rank Olympiad medalist & aspiring computer scientist.
+    <div class="h-0.5 w-12 bg-accent my-6" data-aos="zoom-in" data-aos-delay="200"></div>
+    <p class="max-w-xl text-lg text-gray-300 sm:text-xl leading-relaxed typing-effect" data-aos="fade-up" data-aos-delay="300"> 
+      International-rank Olympiad medalist & aspiring computer scientist.
     </p>
-    <div class="mt-8 flex flex-wrap justify-center gap-4 sm:gap-6">
-      <a href="#achievements" class="btn">Highlights</a>
-      <a href="mailto:contact@dakshbabbar.com" class="btn">Email</a>
+    <div class="mt-12 flex flex-wrap justify-center gap-6" data-aos="fade-up" data-aos-delay="400">
+      <a href="#achievements" class="btn-primary">Highlights</a>
+      <a href="mailto:contact@dakshbabbar.com" class="btn-secondary">Email</a>
+    </div>
+    <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <a href="#about" aria-label="Scroll down">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </a>
     </div>
   </section>
 
-  <section id="about" class="mx-auto max-w-3xl px-4">
-    <h2 class="mb-4 text-2xl font-bold text-accent">
-      About Daksh Babbar – Aspiring Computer Scientist
-    </h2>
-    <p class="text-base leading-7 text-gray-300"> I am spending a focused, self‑directed year deepening my computer‑science expertise through advanced study and hands‑on system optimisation projects. My work sits at the intersection of algorithm design, statistical modelling and ultra‑low‑latency software‑hardware integration. To support these pursuits I am expanding my grasp of pure mathematics, including calculus, linear algebra and combinatorics, while refining competitive‑programming fluency in Python and C++. Alongside these studies I am conducting research on improving real-world efficiency of embedded systems, and I lead volunteer workshops that deliver digital‑literacy skills to under‑resourced students.
+  <section id="about" class="mx-auto max-w-3xl px-6" data-aos="fade-up">
+    <h2 class="section-title">About Daksh Babbar – Aspiring Computer Scientist</h2>
+    <div class="h-0.5 w-12 bg-accent my-6"></div>
+    <p class="text-base leading-relaxed text-gray-300"> 
+      I am spending a focused, self‑directed year deepening my computer‑science expertise through advanced study and hands‑on system optimisation projects. My work sits at the intersection of algorithm design, statistical modelling and ultra‑low‑latency software‑hardware integration. To support these pursuits I am expanding my grasp of pure mathematics, including calculus, linear algebra and combinatorics, while refining competitive‑programming fluency in Python and C++. Alongside these studies I am conducting research on improving real-world efficiency of embedded systems, and I lead volunteer workshops that deliver digital‑literacy skills to under‑resourced students.
     </p>
   </section>
 
-  <section id="achievements" class="mx-auto max-w-4xl px-4">
-    <h2 class="mb-6 text-3xl font-bold text-accent">
-      Key Achievements in STEM Olympiads
-    </h2>
-    <ul class="space-y-6 text-sm">
-      <li class="border-l-4 border-accent pl-4 py-2 hover:bg-black/20 transition-colors"><strong>International Rank 2</strong> — SOF International Mathematics Olympiad (2021)</li>
-      <li class="border-l-4 border-accent pl-4 py-2 hover:bg-black/20 transition-colors"><strong>International Rank 2</strong> — SOF National Science Olympiad (2021)</li>
-      <li class="border-l-4 border-accent pl-4 py-2 hover:bg-black/20 transition-colors"><strong>International Rank 4</strong> — SOF International English Olympiad (2023)</li>
-      <li class="border-l-4 border-accent pl-4 py-2 hover:bg-black/20 transition-colors"><strong>1st Rank, North India</strong> — 7th Korea–India Friendship Quiz (2022)</li>
-      <li class="border-l-4 border-accent pl-4 py-2 hover:bg-black/20 transition-colors">Over 30 medals earned across various international, zonal, &amp; and school-level STEM Olympiads</li>
-    </ul>
+  <section id="achievements" class="mx-auto max-w-4xl px-6" data-aos="fade-up">
+    <h2 class="section-title">Key Achievements in STEM Olympiads</h2>
+    <div class="h-0.5 w-12 bg-accent my-6"></div>
+    <div class="achievements-grid">
+      <div class="achievement-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="achievement-content">
+          <h3 class="achievement-title">International Rank 2</h3>
+          <p class="achievement-description">SOF International Mathematics Olympiad (2021)</p>
+        </div>
+      </div>
+      <div class="achievement-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="achievement-content">
+          <h3 class="achievement-title">International Rank 2</h3>
+          <p class="achievement-description">SOF National Science Olympiad (2021)</p>
+        </div>
+      </div>
+      <div class="achievement-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="achievement-content">
+          <h3 class="achievement-title">International Rank 4</h3>
+          <p class="achievement-description">SOF International English Olympiad (2023)</p>
+        </div>
+      </div>
+      <div class="achievement-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="achievement-content">
+          <h3 class="achievement-title">1st Rank, North India</h3>
+          <p class="achievement-description">7th Korea–India Friendship Quiz (2022)</p>
+        </div>
+      </div>
+      <div class="achievement-card" data-aos="fade-up" data-aos-delay="500">
+        <div class="achievement-content">
+          <h3 class="achievement-title">30+ Medals</h3>
+          <p class="achievement-description">Across various international, zonal, & school-level STEM Olympiads</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section id="leadership" class="mx-auto max-w-4xl px-4">
-    <h2 class="mb-6 text-3xl font-bold text-accent">
-      Leadership & Community Engagement
-    </h2>
-    <ul class="space-y-6"> <li class="rounded-lg p-4 hover:bg-black/20 transition-all duration-300"> <h3 class="mb-2 font-semibold text-gray-50">Volunteer Educator (2023–Present)</h3> <p class="text-sm text-gray-300">Delivered digital literacy and English education to underprivileged children as part of a certified NGO initiative.</p>
-      </li>
-      <li class="rounded-lg p-4 hover:bg-black/20 transition-all duration-300"> <h3 class="mb-2 font-semibold text-gray-50">Class Prefect (2018–2023)</h3> <p class="text-sm text-gray-300">Consistently entrusted with leadership roles and responsibilities across multiple academic years.</p>
-      </li>
-    </ul>
+  <section id="leadership" class="mx-auto max-w-4xl px-6" data-aos="fade-up">
+    <h2 class="section-title">Leadership & Community Engagement</h2>
+    <div class="h-0.5 w-12 bg-accent my-6"></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="leadership-card" data-aos="fade-right">
+        <h3 class="leadership-title">Volunteer Educator</h3>
+        <p class="leadership-date">2023–Present</p>
+        <p class="leadership-description">Delivered digital literacy and English education to underprivileged children as part of a certified NGO initiative.</p>
+      </div>
+      <div class="leadership-card" data-aos="fade-left">
+        <h3 class="leadership-title">Class Prefect</h3>
+        <p class="leadership-date">2018–2023</p>
+        <p class="leadership-description">Consistently entrusted with leadership roles and responsibilities across multiple academic years.</p>
+      </div>
+    </div>
   </section>
 
-  <section id="extracurricular" class="mx-auto max-w-4xl px-4">
-    <h2 class="mb-6 text-3xl font-bold text-accent">
-      Extracurricular Highlights
-    </h2>
-    <ul class="space-y-6"> <li class="rounded-lg p-4 hover:bg-black/20 transition-all duration-300"> <h3 class="mb-2 font-semibold text-gray-50">Zonal Table Tennis Champion (2022–2023)</h3> <p class="text-sm text-gray-300">Secured 1st place in the Zonal Games representing school-level competition.</p>
-      </li>
-      <li class="rounded-lg p-4 hover:bg-black/20 transition-all duration-300"> <h3 class="mb-2 font-semibold text-gray-50">Environmental Advocacy & Competitions</h3> <p class="text-sm text-gray-300">Awarded Gold Medals in the Green Olympiad (2018, 2023). Winner of high-profile events such as the INTACH Heritage Quiz and Science & Technology Poster Competitions.</p>
-      </li>
-      <li class="rounded-lg p-4 hover:bg-black/20 transition-all duration-300"> <h3 class="mb-2 font-semibold text-gray-50">Piano Performer & Diploma Holder</h3> <p class="text-sm text-gray-300">Performed at distinguished venues. Earned a diploma in Piano from Vaan Academy, New Delhi.</p>
-      </li>
-    </ul>
+  <section id="extracurricular" class="mx-auto max-w-4xl px-6" data-aos="fade-up">
+    <h2 class="section-title">Extracurricular Highlights</h2>
+    <div class="h-0.5 w-12 bg-accent my-6"></div>
+    <div class="extracurricular-timeline">
+      <div class="timeline-item" data-aos="fade-up">
+        <div class="timeline-content">
+          <h3 class="timeline-title">Zonal Table Tennis Champion</h3>
+          <p class="timeline-date">2022–2023</p>
+          <p class="timeline-description">Secured 1st place in the Zonal Games representing school-level competition.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+        <div class="timeline-content">
+          <h3 class="timeline-title">Environmental Advocacy & Competitions</h3>
+          <p class="timeline-description">Awarded Gold Medals in the Green Olympiad (2018, 2023). Winner of high-profile events such as the INTACH Heritage Quiz and Science & Technology Poster Competitions.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+        <div class="timeline-content">
+          <h3 class="timeline-title">Piano Performer & Diploma Holder</h3>
+          <p class="timeline-description">Performed at distinguished venues. Earned a diploma in Piano from Vaan Academy, New Delhi.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section id="contact" class="mx-auto max-w-3xl px-4 text-center">
-    <h2 class="mb-4 text-2xl font-bold text-accent">Contact Daksh Babbar</h2>
-    <p class="mb-6 text-sm text-gray-300">For academic collaborations, research opportunities, or inquiries:</p>
-    <div class="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
-      <a href="mailto:contact@dakshbabbar.com" class="btn text-base sm:text-lg">
-        <svg xmlns="http://www.w3.org/2000/svg" class="inline-block h-4 w-4 mr-1" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <section id="contact" class="mx-auto max-w-3xl px-6 text-center" data-aos="fade-up">
+    <h2 class="section-title text-center">Contact Daksh Babbar</h2>
+    <div class="h-0.5 w-12 bg-accent my-6 mx-auto"></div>
+    <p class="mb-8 text-gray-300">For academic collaborations, research opportunities, or inquiries:</p>
+    <div class="contact-buttons">
+      <a href="mailto:contact@dakshbabbar.com" class="btn-contact" data-aos="fade-up" data-aos-delay="100">
+        <svg xmlns="http://www.w3.org/2000/svg" class="contact-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
           <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
           <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
         </svg>
         contact@dakshbabbar.com
       </a>
-      <a href="https://www.linkedin.com/in/daksh-babbar-52bb511a6/" target="_blank" rel="noopener noreferrer" class="btn text-base sm:text-lg hover:scale-110"> <svg xmlns="http://www.w3.org/2000/svg" class="inline-block h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <a href="https://www.linkedin.com/in/daksh-babbar-52bb511a6/" target="_blank" rel="noopener noreferrer" class="btn-contact" data-aos="fade-up" data-aos-delay="200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="contact-icon" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
         </svg>
         LinkedIn
@@ -169,69 +233,156 @@
   </section>
 </main>
 
-<footer class="pb-6 pt-12 text-center text-xs text-gray-500">
-  © <span id="year"></span> Daksh Babbar. All rights reserved.
+<footer class="border-t border-gray-800 mt-24 py-12 text-center text-sm text-gray-500">
+  <div class="mx-auto max-w-6xl px-6">
+    <p>© <span id="year"></span> Daksh Babbar. All rights reserved.</p>
+  </div>
 </footer>
 
-<script defer>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  // Initialize AOS with better defaults for smoother animations
+  AOS.init({
+    duration: 800,
+    easing: 'ease-out-cubic',
+    once: true,
+    offset: 50,
+    delay: 0,
+    anchorPlacement: 'top-bottom'
+  });
+
+  // Update year
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  // Mobile menu toggle with improved animation
   const menuToggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
+  const menuSpans = menuToggle.querySelectorAll('span');
 
   if (menuToggle && mobileMenu) {
     menuToggle.addEventListener('click', function() {
-      const isMenuVisible = !mobileMenu.classList.toggle('hidden');
-      menuToggle.setAttribute('aria-expanded', isMenuVisible);
-      // Add/remove class for menu icon animation
-      menuToggle.classList.toggle('menu-open');
+      const isMenuVisible = mobileMenu.classList.toggle('hidden');
+      menuToggle.setAttribute('aria-expanded', !isMenuVisible);
+      
+      // Smoother hamburger to X animation
+      if (!isMenuVisible) {
+        menuSpans[0].classList.add('rotate-45', 'translate-y-1.5');
+        menuSpans[1].classList.add('opacity-0');
+        menuSpans[2].classList.add('-rotate-45', 'translate-y-[-0.625rem]');
+      } else {
+        menuSpans[0].classList.remove('rotate-45', 'translate-y-1.5');
+        menuSpans[1].classList.remove('opacity-0');
+        menuSpans[2].classList.remove('-rotate-45', 'translate-y-[-0.625rem]');
+      }
     });
   }
 
+  // Close mobile menu when clicking on links
   const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
   if (mobileMenuLinks.length > 0 && mobileMenu && menuToggle) {
     mobileMenuLinks.forEach(link => {
       link.addEventListener('click', function() {
         mobileMenu.classList.add('hidden');
         menuToggle.setAttribute('aria-expanded', 'false');
-        // Remove menu icon animation class
-        menuToggle.classList.remove('menu-open');
+        menuSpans[0].classList.remove('rotate-45', 'translate-y-1.5');
+        menuSpans[1].classList.remove('opacity-0');
+        menuSpans[2].classList.remove('-rotate-45', 'translate-y-[-0.625rem]');
       });
     });
   }
 
-  // Intersection Observer for animations
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const sectionsToAnimate = document.querySelectorAll('section[id]:not(#home)');
-
-    if (sectionsToAnimate.length > 0) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-slide-up');
-            entry.target.classList.remove('opacity-0'); // Ensure opacity is removed to show the element
-            observer.unobserve(entry.target);
+  // Add active class to navigation links based on scroll position
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+  
+  function highlightNavOnScroll() {
+    const scrollY = window.pageYOffset;
+    
+    sections.forEach(section => {
+      const sectionHeight = section.offsetHeight;
+      const sectionTop = section.offsetTop - 100;
+      const sectionId = section.getAttribute('id');
+      
+      if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if(link.getAttribute('href') === `#${sectionId}`) {
+            link.classList.add('active');
           }
         });
-      }, {
-        root: null,
-        threshold: 0.1, // Adjust threshold as needed
-        rootMargin: '-50px 0px -50px 0px' // Adjust rootMargin as needed
-      });
+      }
+    });
+  }
 
-      sectionsToAnimate.forEach(section => {
-        section.classList.add('opacity-0'); // Start with opacity 0
-        // Ensure animate-slide-up is not initially present if it relies on opacity changes defined in CSS
-        section.classList.remove('animate-slide-up'); 
-        observer.observe(section);
-      });
+  window.addEventListener('scroll', highlightNavOnScroll);
+  
+  // Enhanced header scroll effect
+  const header = document.querySelector('header');
+  let lastScrollY = window.scrollY;
+  
+  function handleHeaderOnScroll() {
+    const scrollY = window.scrollY;
+    
+    // Add shadow and reduce padding when scrolling down
+    if (scrollY > 10) {
+      header.classList.add('py-3', 'shadow-md');
+      header.classList.remove('py-4');
+    } else {
+      header.classList.remove('py-3', 'shadow-md');
+      header.classList.add('py-4');
     }
-  } else {
-    // Fallback for reduced motion: remove opacity and animation classes
-    const sectionsToAnimate = document.querySelectorAll('section[id]:not(#home)');
-    sectionsToAnimate.forEach(section => {
-      section.classList.remove('opacity-0');
-      section.classList.remove('animate-slide-up');
+    
+    // Hide header when scrolling down, show when scrolling up - with smoother animation
+    if (scrollY > lastScrollY && scrollY > 100) {
+      header.style.transform = 'translateY(-100%)';
+    } else {
+      header.style.transform = 'translateY(0)';
+    }
+    
+    lastScrollY = scrollY;
+  }
+  
+  window.addEventListener('scroll', handleHeaderOnScroll);
+  
+  // Enhanced typing effect for home section
+  const typingElement = document.querySelector('.typing-effect');
+  const text = typingElement.textContent.trim();
+  
+  if (typingElement && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    typingElement.textContent = '';
+    let i = 0;
+    
+    function typeWriter() {
+      if (i < text.length) {
+        typingElement.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, Math.random() * 30 + 30); // Randomized typing speed for more natural effect
+      }
+    }
+    
+    // Start typing when element is in view for better performance
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(typeWriter, 500); // Delay start of typing for better effect
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+    
+    observer.observe(typingElement);
+  }
+  
+  // Respect reduced motion preferences
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    // Disable animations for users who prefer reduced motion
+    document.querySelectorAll('[data-aos]').forEach(el => {
+      el.removeAttribute('data-aos');
+    });
+    
+    // Remove animation classes
+    document.querySelectorAll('.animate-bounce').forEach(el => {
+      el.classList.remove('animate-bounce');
     });
   }
 </script>

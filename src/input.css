@@ -35,9 +35,13 @@
   src: url('fonts/poppins-v23-latin-600.woff2') format('woff2');
 }
 
-/* 3. Your Custom Global Styles & Variables */
+/* 3. Global Styles & Variables */
 :root {
   --accent: #0ef6ff;
+  --text-primary: #e6e6e6;
+  --text-secondary: #a3a3a3;
+  --bg-primary: #0b0b0b;
+  --bg-secondary: #141414;
 }
 
 html {
@@ -45,39 +49,158 @@ html {
 }
 
 body {
-  background-color: #0b0b0b;
-  color: #e6e6e6;
-  /* font-family will be applied by Tailwind's base via tailwind.config.js */
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* 4. Your Custom Utility-like Classes */
-.btn {
-  display: inline-block;
-  border: 1px solid var(--accent);
-  padding: 0.55rem 1.6rem;
-  border-radius: 9999px;
-  text-decoration: none;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-              color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-              transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+/* 4. Typography Styles - Proper Heading Hierarchy */
+@layer base {
+  h1 {
+    @apply text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-tight;
+  }
+  
+  h2 {
+    @apply text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-6;
+  }
+  
+  h3 {
+    @apply text-xl sm:text-2xl md:text-3xl font-semibold mb-3;
+  }
+  
+  h4 {
+    @apply text-lg sm:text-xl font-medium mb-2;
+  }
+  
+  p {
+    @apply text-base md:text-lg mb-4 text-gray-300;
+  }
 }
 
-.btn:hover {
-  background-color: var(--accent);
-  color: #0b0b0b;
-  transform: translateY(-2px); /* Add subtle lift effect */
+/* 5. Button Styles */
+.btn-primary {
+  @apply inline-block px-5 py-2.5 bg-transparent border border-accent text-white rounded-full font-medium transition-all duration-300 hover:bg-accent hover:text-black hover:shadow-lg transform hover:-translate-y-1;
 }
 
-/* Menu toggle icon animation */
-#menu-toggle svg {
-  transition: transform 0.3s ease-in-out;
+.btn-secondary {
+  @apply inline-block px-5 py-2.5 bg-transparent border border-white/20 text-white rounded-full font-medium transition-all duration-300 hover:border-white/60 transform hover:-translate-y-1;
 }
 
-#menu-toggle.menu-open svg {
-  transform: rotate(90deg);
+/* 6. Contact Button - Fixed Size */
+.btn-contact {
+  @apply flex items-center justify-center gap-3 px-6 py-3 rounded-md bg-gray-800/80 text-white transition-all duration-300 hover:bg-gray-700 text-sm sm:text-base;
+  min-width: 16rem;
 }
 
-/* 5. Accessibility: Reduced Motion */
+.contact-icon {
+  @apply h-5 w-5 flex-shrink-0 mr-1;
+}
+
+.contact-buttons {
+  @apply flex flex-col sm:flex-row items-center justify-center gap-4;
+}
+
+/* 7. Section Title Styles */
+.section-title {
+  @apply font-semibold text-3xl sm:text-4xl md:text-5xl relative mb-4;
+}
+
+/* 8. Custom Navigation Styles */
+.nav-link, .mobile-nav-link {
+  @apply relative text-gray-400 transition-colors duration-300 hover:text-white;
+}
+
+.nav-link::after, .mobile-nav-link::after {
+  content: '';
+  @apply absolute left-0 bottom-[-4px] w-0 h-0.5 bg-accent transition-all duration-300;
+}
+
+.nav-link:hover::after, .mobile-nav-link:hover::after, 
+.nav-link.active::after, .mobile-nav-link.active::after {
+  @apply w-full;
+}
+
+.nav-link.active, .mobile-nav-link.active {
+  @apply text-white;
+}
+
+/* 9. Achievement Card Styles */
+.achievements-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.achievement-card {
+  @apply bg-gray-800/30 backdrop-blur-sm p-5 rounded-lg transition-all duration-300 hover:bg-gray-800/50 hover:shadow-lg hover:-translate-y-1;
+  width: 300px;
+  margin: 10px;
+}
+
+.achievement-title {
+  @apply text-xl font-semibold text-accent mb-2;
+}
+
+.achievement-description {
+  @apply text-sm text-gray-300;
+}
+
+/* 10. Leadership Card Styles */
+.leadership-card {
+  @apply bg-gray-800/30 backdrop-blur-sm p-6 rounded-lg transition-all duration-300 hover:bg-gray-800/50 hover:shadow-lg;
+}
+
+.leadership-title {
+  @apply text-xl font-semibold mb-1;
+}
+
+.leadership-date {
+  @apply text-sm text-accent mb-3;
+}
+
+.leadership-description {
+  @apply text-gray-300;
+}
+
+/* 11. Timeline Styles */
+.extracurricular-timeline {
+  @apply relative space-y-12 mt-8 pl-6 border-l border-gray-700;
+}
+
+.timeline-item {
+  @apply relative -ml-6;
+}
+
+.timeline-item::before {
+  content: '';
+  @apply absolute top-1.5 left-0 h-4 w-4 rounded-full bg-accent;
+  transform: translateX(-50%);
+}
+
+.timeline-content {
+  @apply ml-8 pl-4;
+}
+
+.timeline-title {
+  @apply text-xl font-semibold mb-1;
+}
+
+.timeline-date {
+  @apply text-sm text-accent mb-2;
+}
+
+.timeline-description {
+  @apply text-gray-300;
+}
+
+/* 12. Shadow Classes */
+.shadow-md {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* 13. Media Query: Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
