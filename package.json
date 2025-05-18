@@ -4,7 +4,9 @@
   "description": "Personal portfolio website for Daksh Babbar",
   "scripts": {
     "build:css": "npx tailwindcss -i ./src/input.css -o ./assets/style.css --minify",
-    "build": "npm run build:css"
+    "build": "npm run build:css && npm run copy-files",
+    "copy-files": "cpy index.html dist && cpy _redirects dist && cpy robots.txt dist && cpy sitemap.xml dist && cpy \"assets/**\" dist/assets",
+    "dev": "npx tailwindcss -i ./src/input.css -o ./assets/style.css --watch"
   },
   "keywords": [
     "portfolio",
@@ -14,6 +16,7 @@
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.4.19",
+    "cpy-cli": "^5.0.0",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3"
   }
