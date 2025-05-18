@@ -168,23 +168,6 @@
     </div>
   </section>
 
-  <section id="leadership" class="mx-auto max-w-4xl px-6" data-aos="fade-up">
-    <h2 class="section-title">Leadership & Community Engagement</h2>
-    <div class="h-0.5 w-12 bg-accent my-6"></div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="leadership-card" data-aos="fade-right">
-        <h3 class="leadership-title">Volunteer Educator</h3>
-        <p class="leadership-date">2023–Present</p>
-        <p class="leadership-description">Delivered digital literacy and English education to underprivileged children as part of a certified NGO initiative.</p>
-      </div>
-      <div class="leadership-card" data-aos="fade-left">
-        <h3 class="leadership-title">Class Prefect</h3>
-        <p class="leadership-date">2018–2023</p>
-        <p class="leadership-description">Consistently entrusted with leadership roles and responsibilities across multiple academic years.</p>
-      </div>
-    </div>
-  </section>
-
   <section id="extracurricular" class="mx-auto max-w-4xl px-6" data-aos="fade-up">
     <h2 class="section-title">Extracurricular Highlights</h2>
     <div class="h-0.5 w-12 bg-accent my-6"></div>
@@ -207,6 +190,23 @@
           <h3 class="timeline-title">Piano Performer & Diploma Holder</h3>
           <p class="timeline-description">Performed at distinguished venues. Earned a diploma in Piano from Vaan Academy, New Delhi.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="leadership" class="mx-auto max-w-4xl px-6" data-aos="fade-up">
+    <h2 class="section-title">Leadership & Community Engagement</h2>
+    <div class="h-0.5 w-12 bg-accent my-6"></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="leadership-card" data-aos="fade-right">
+        <h3 class="leadership-title">Volunteer Educator</h3>
+        <p class="leadership-date">2023–Present</p>
+        <p class="leadership-description">Delivered digital literacy and English education to underprivileged children as part of a certified NGO initiative.</p>
+      </div>
+      <div class="leadership-card" data-aos="fade-left">
+        <h3 class="leadership-title">Class Prefect</h3>
+        <p class="leadership-date">2018–2023</p>
+        <p class="leadership-description">Consistently entrusted with leadership roles and responsibilities across multiple academic years.</p>
       </div>
     </div>
   </section>
@@ -261,11 +261,11 @@
 
   if (menuToggle && mobileMenu) {
     menuToggle.addEventListener('click', function() {
-      const isMenuVisible = mobileMenu.classList.toggle('hidden');
-      menuToggle.setAttribute('aria-expanded', !isMenuVisible);
+      const isMenuHidden = mobileMenu.classList.toggle('hidden');
+      menuToggle.setAttribute('aria-expanded', !isMenuHidden);
       
       // Smoother hamburger to X animation
-      if (!isMenuVisible) {
+      if (!isMenuHidden) {
         menuSpans[0].classList.add('rotate-45', 'translate-y-1.5');
         menuSpans[1].classList.add('opacity-0');
         menuSpans[2].classList.add('-rotate-45', 'translate-y-[-0.625rem]');

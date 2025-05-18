@@ -55,6 +55,11 @@ body {
   overflow-x: hidden;
 }
 
+/* Added scroll margin for sections to create padding when navigating to them */
+section[id] {
+  scroll-margin-top: 6rem;
+}
+
 /* 4. Typography Styles - Proper Heading Hierarchy */
 @layer base {
   h1 {
@@ -84,17 +89,19 @@ body {
 }
 
 .btn-secondary {
-  @apply inline-block px-5 py-2.5 bg-transparent border border-white/20 text-white rounded-full font-medium transition-all duration-300 hover:border-white/60 transform hover:-translate-y-1;
+  @apply inline-block px-5 py-2.5 bg-transparent border border-accent text-white rounded-full font-medium transition-all duration-300 hover:bg-accent hover:text-black hover:shadow-lg transform hover:-translate-y-1;
 }
 
 /* 6. Contact Button - Fixed Size */
 .btn-contact {
   @apply flex items-center justify-center gap-3 px-6 py-3 rounded-md bg-gray-800/80 text-white transition-all duration-300 hover:bg-gray-700 text-sm sm:text-base;
   min-width: 16rem;
+  text-align: center;
 }
 
 .contact-icon {
-  @apply h-5 w-5 flex-shrink-0 mr-1;
+  @apply h-5 w-5 flex-shrink-0;
+  margin-right: 0;
 }
 
 .contact-buttons {
@@ -136,7 +143,8 @@ body {
 .achievement-card {
   @apply bg-gray-800/30 backdrop-blur-sm p-5 rounded-lg transition-all duration-300 hover:bg-gray-800/50 hover:shadow-lg hover:-translate-y-1;
   width: 300px;
-  margin: 10px;
+  margin: 10px 20px; /* Increased horizontal spacing between cards */
+  text-align: center; /* Center align text in achievement cards */
 }
 
 .achievement-title {
@@ -166,7 +174,21 @@ body {
 
 /* 11. Timeline Styles */
 .extracurricular-timeline {
-  @apply relative space-y-12 mt-8 pl-6 border-l border-gray-700;
+  @apply relative space-y-12 mt-8 pl-6;
+  /* Removed border-l as we will create a custom timeline with position:absolute */
+  position: relative;
+}
+
+/* Create a custom timeline that doesn't extend beyond the first and last items */
+.extracurricular-timeline::before {
+  content: '';
+  position: absolute;
+  top: 10px; /* Start at the first circle's center point */
+  bottom: 10px; /* End at the last circle's center point */
+  left: 0; /* Align to pass through center of circles */
+  width: 3px; /* Thicker line as requested */
+  background-color: white; /* Changed to white */
+  transform: translateX(-50%);
 }
 
 .timeline-item {
@@ -177,6 +199,7 @@ body {
   content: '';
   @apply absolute top-1.5 left-0 h-4 w-4 rounded-full bg-accent;
   transform: translateX(-50%);
+  z-index: 1; /* Ensure circles appear above the line */
 }
 
 .timeline-content {
