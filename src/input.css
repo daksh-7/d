@@ -1,0 +1,81 @@
+/* src/input.css */
+
+/* 1. Tailwind Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 2. Self-Hosted Font Definitions (@font-face) */
+/* Paths are relative to the FINAL output file: /assets/style.css */
+
+/* Poppins - Weight 300 */
+@font-face {
+  font-display: swap;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  src: url('fonts/poppins-v23-latin-300.woff2') format('woff2'); /* Updated v23 */
+}
+
+/* Poppins - Weight 400 (Regular) */
+@font-face {
+  font-display: swap;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/poppins-v23-latin-regular.woff2') format('woff2'); /* Updated v23 */
+}
+
+/* Poppins - Weight 600 */
+@font-face {
+  font-display: swap;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  src: url('fonts/poppins-v23-latin-600.woff2') format('woff2'); /* Updated v23 */
+}
+
+/* 3. Your Custom Global Styles & Variables */
+:root {
+  --accent: #0ef6ff;
+}
+
+body {
+  background-color: #0b0b0b;
+  color: #e6e6e6;
+  scroll-behavior: smooth;
+  /* font-family will be applied by Tailwind's base via tailwind.config.js */
+}
+
+/* 4. Your Custom Utility-like Classes */
+.accent {
+  color: var(--accent);
+}
+
+.btn {
+  display: inline-block;
+  border: 1px solid var(--accent);
+  padding: 0.55rem 1.6rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition-property: background-color, color, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+}
+
+.btn:hover {
+  background-color: var(--accent);
+  color: #0b0b0b;
+}
+
+/* 5. Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
