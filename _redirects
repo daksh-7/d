@@ -1,5 +1,0 @@
-# Redirect domain aliases to primary domain
-https://www.dakshbabbar.com/* https://dakshbabbar.com/:splat 301!
-
-# Optional: Handle 404 errors by redirecting to the homepage
-/* /index.html 200 

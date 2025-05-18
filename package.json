@@ -5,7 +5,7 @@
   "scripts": {
     "build:css": "npx tailwindcss -i ./src/input.css -o ./assets/style.css --minify",
     "build": "npm run build:css && npm run copy-files",
-    "copy-files": "cpy index.html dist && cpy _redirects dist && cpy robots.txt dist && cpy sitemap.xml dist && cpy \"assets/**\" dist/assets",
+    "copy-files": "cpy index.html dist && cpy robots.txt dist && cpy sitemap.xml dist && cpy \"assets/**\" dist/assets",
     "dev": "npx tailwindcss -i ./src/input.css -o ./assets/style.css --watch"
   },
   "keywords": [
