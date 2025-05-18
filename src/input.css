@@ -62,7 +62,7 @@ section[id] {
 
 /* Special scroll margin for achievements section */
 #achievements {
-  scroll-margin-top: 10rem;
+  scroll-margin-top: 4rem;
 }
 
 /* 4. Typography Styles - Proper Heading Hierarchy */
@@ -197,10 +197,10 @@ section[id] {
   content: '';
   position: absolute;
   top: 20px; /* Align with center of first circle icon */
-  height: calc(100% - 40px); /* Shorter line to not extend beyond circles */
-  left: 43px; /* Centered with the circle icons (3rem padding - 16px circle width / 2 + 1px line width adjustment) */
-  width: 2px; /* Slightly thinner line */
-  background-color: var(--accent); /* Change to accent color */
+  height: calc(100% - 48px); /* Shorter line (was -40px) */
+  left: 43px; /* Centered with the circle icons */
+  width: 2px;
+  background-color: var(--accent);
 }
 
 .timeline-item {
