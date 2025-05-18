@@ -60,6 +60,11 @@ section[id] {
   scroll-margin-top: 6rem;
 }
 
+/* Special scroll margin for achievements section */
+#achievements {
+  scroll-margin-top: 10rem;
+}
+
 /* 4. Typography Styles - Proper Heading Hierarchy */
 @layer base {
   h1 {
@@ -141,41 +146,49 @@ section[id] {
 }
 
 .achievement-card {
-  @apply bg-gray-800/30 backdrop-blur-sm p-5 rounded-lg transition-all duration-300 hover:bg-gray-800/50 hover:shadow-lg hover:-translate-y-1;
-  width: 300px;
-  margin: 10px 20px; /* Increased horizontal spacing between cards */
+  @apply bg-gray-800/30 backdrop-blur-sm p-6 rounded-lg transition-all duration-300 hover:bg-gray-800/50 hover:shadow-lg hover:-translate-y-1;
+  width: 340px;
+  height: 180px;
+  margin: 15px 25px; /* Increased spacing between cards */
   text-align: center; /* Center align text in achievement cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .achievement-title {
-  @apply text-xl font-semibold text-accent mb-2;
+  @apply text-2xl font-semibold text-accent mb-3;
 }
 
 .achievement-description {
-  @apply text-sm text-gray-300;
+  @apply text-base text-gray-300;
 }
 
 /* 10. Leadership Card Styles */
 .leadership-card {
-  @apply bg-gray-800/30 backdrop-blur-sm p-6 rounded-lg transition-all duration-300 hover:bg-gray-800/50 hover:shadow-lg;
+  @apply bg-gray-800/30 backdrop-blur-sm p-8 rounded-lg transition-all duration-300 hover:bg-gray-800/50 hover:shadow-lg;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .leadership-title {
-  @apply text-xl font-semibold mb-1;
+  @apply text-2xl font-semibold mb-2;
 }
 
 .leadership-date {
-  @apply text-sm text-accent mb-3;
+  @apply text-sm text-accent mb-4;
 }
 
 .leadership-description {
-  @apply text-gray-300;
+  @apply text-gray-300 text-lg;
 }
 
 /* 11. Timeline Styles */
 .extracurricular-timeline {
-  @apply relative space-y-12 mt-8 pl-6;
-  /* Removed border-l as we will create a custom timeline with position:absolute */
+  @apply relative space-y-16 mt-8;
+  padding-left: 3rem;
   position: relative;
 }
 
@@ -183,39 +196,51 @@ section[id] {
 .extracurricular-timeline::before {
   content: '';
   position: absolute;
-  top: 10px; /* Start at the first circle's center point */
-  bottom: 10px; /* End at the last circle's center point */
-  left: 0; /* Align to pass through center of circles */
-  width: 3px; /* Thicker line as requested */
-  background-color: white; /* Changed to white */
-  transform: translateX(-50%);
+  top: 20px; /* Align with center of first circle icon */
+  height: calc(100% - 40px); /* Shorter line to not extend beyond circles */
+  left: 43px; /* Centered with the circle icons (3rem padding - 16px circle width / 2 + 1px line width adjustment) */
+  width: 2px; /* Slightly thinner line */
+  background-color: var(--accent); /* Change to accent color */
 }
 
 .timeline-item {
-  @apply relative -ml-6;
+  @apply relative;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
 }
 
 .timeline-item::before {
   content: '';
-  @apply absolute top-1.5 left-0 h-4 w-4 rounded-full bg-accent;
-  transform: translateX(-50%);
+  position: absolute;
+  top: 12px; /* Align with content */
+  left: -12px; /* Adjust for center alignment with line */
+  height: 16px;
+  width: 16px;
+  background-color: var(--accent);
+  border-radius: 50%;
   z-index: 1; /* Ensure circles appear above the line */
 }
 
 .timeline-content {
-  @apply ml-8 pl-4;
+  @apply pl-8;
 }
 
 .timeline-title {
-  @apply text-xl font-semibold mb-1;
+  @apply text-2xl font-semibold mb-1;
 }
 
 .timeline-date {
-  @apply text-sm text-accent mb-2;
+  @apply text-sm text-accent mb-3;
 }
 
 .timeline-description {
-  @apply text-gray-300;
+  @apply text-gray-300 text-lg;
+}
+
+/* Section Arrow Styling */
+.section-arrow {
+  @apply transition-all duration-300 hover:opacity-80 hover:translate-y-1;
 }
 
 /* 12. Shadow Classes */

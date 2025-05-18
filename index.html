@@ -100,9 +100,9 @@
   </div>
 </header>
 
-<main id="main-content" class="space-y-24 pt-32">
-  <section id="home" class="mx-auto flex min-h-[90vh] max-w-6xl flex-col items-center justify-center px-6 text-center">
-    <h1 class="mb-6 font-extrabold tracking-tight">
+<main id="main-content" class="pt-32">
+  <section id="home" class="mx-auto flex min-h-screen max-w-6xl flex-col items-center justify-center px-6 text-center pt-0 pb-24 mb-20">
+    <h1 class="mb-6 font-extrabold tracking-tight mt-[-80px]">
       <span class="text-accent text-5xl sm:text-7xl md:text-8xl block mb-2" data-aos="fade-up" data-aos-duration="800">Daksh</span>
       <span class="text-white text-4xl sm:text-6xl md:text-7xl block" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">Babbar</span>
     </h1>
@@ -123,18 +123,32 @@
     </div>
   </section>
 
-  <section id="about" class="mx-auto max-w-3xl px-6" data-aos="fade-up">
+  <section id="about" class="mx-auto max-w-3xl px-6 min-h-screen flex flex-col justify-center mb-20" data-aos="fade-up">
     <h2 class="section-title">About Daksh Babbar – Aspiring Computer Scientist</h2>
     <div class="h-0.5 w-12 bg-accent my-6"></div>
-    <p class="text-base leading-relaxed text-gray-300"> 
-      I am spending a focused, self‑directed year deepening my computer‑science expertise through advanced study and hands‑on system optimisation projects. My work sits at the intersection of algorithm design, statistical modelling and ultra‑low‑latency software‑hardware integration. To support these pursuits I am expanding my grasp of pure mathematics, including calculus, linear algebra and combinatorics, while refining competitive‑programming fluency in Python and C++. Alongside these studies I am conducting research on improving real-world efficiency of embedded systems, and I lead volunteer workshops that deliver digital‑literacy skills to under‑resourced students.
-    </p>
+    <div class="text-lg leading-relaxed text-gray-300 space-y-6"> 
+      <p>
+        I am spending a focused, self‑directed year deepening my computer‑science expertise through advanced study and hands‑on system optimisation projects. My work sits at the intersection of algorithm design, statistical modelling and ultra‑low‑latency software‑hardware integration.
+      </p>
+      <p>
+        To support these pursuits I am expanding my grasp of pure mathematics, including calculus, linear algebra and combinatorics, while refining competitive‑programming fluency in Python and C++.
+      </p>
+      <p>
+        Alongside these studies I am conducting research on improving real-world efficiency of embedded systems, and I lead volunteer workshops that deliver digital‑literacy skills to under‑resourced students.
+      </p>
+    </div>
+    <div class="flex justify-center mt-12">
+      <a href="#achievements" aria-label="Scroll to achievements" class="section-arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </a>
+    </div>
   </section>
 
-  <section id="achievements" class="mx-auto max-w-4xl px-6" data-aos="fade-up">
-    <h2 class="section-title">Key Achievements in STEM Olympiads</h2>
-    <div class="h-0.5 w-12 bg-accent my-6"></div>
-    <div class="achievements-grid">
+    <section id="achievements" class="mx-auto max-w-5xl px-6 min-h-screen flex flex-col justify-center py-20 scroll-mt-24 mb-20" data-aos="fade-up">    <h2 class="section-title text-center">Key Achievements in STEM Olympiads</h2>
+    <div class="h-0.5 w-12 bg-accent my-6 mx-auto"></div>
+    <div class="achievements-grid py-12">
       <div class="achievement-card" data-aos="fade-up" data-aos-delay="100">
         <div class="achievement-content">
           <h3 class="achievement-title">International Rank 2</h3>
@@ -159,6 +173,8 @@
           <p class="achievement-description">7th Korea–India Friendship Quiz (2022)</p>
         </div>
       </div>
+    </div>
+    <div class="achievements-grid py-4">
       <div class="achievement-card" data-aos="fade-up" data-aos-delay="500">
         <div class="achievement-content">
           <h3 class="achievement-title">30+ Medals</h3>
@@ -166,12 +182,19 @@
         </div>
       </div>
     </div>
+    <div class="flex justify-center mt-12">
+      <a href="#extracurricular" aria-label="Scroll to extracurricular" class="section-arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </a>
+    </div>
   </section>
 
-  <section id="extracurricular" class="mx-auto max-w-4xl px-6" data-aos="fade-up">
+  <section id="extracurricular" class="mx-auto max-w-4xl px-6 min-h-screen flex flex-col justify-center mb-20" data-aos="fade-up">
     <h2 class="section-title">Extracurricular Highlights</h2>
     <div class="h-0.5 w-12 bg-accent my-6"></div>
-    <div class="extracurricular-timeline">
+    <div class="extracurricular-timeline py-12">
       <div class="timeline-item" data-aos="fade-up">
         <div class="timeline-content">
           <h3 class="timeline-title">Zonal Table Tennis Champion</h3>
@@ -192,12 +215,19 @@
         </div>
       </div>
     </div>
+    <div class="flex justify-center mt-12">
+      <a href="#leadership" aria-label="Scroll to leadership" class="section-arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </a>
+    </div>
   </section>
 
-  <section id="leadership" class="mx-auto max-w-4xl px-6" data-aos="fade-up">
+  <section id="leadership" class="mx-auto max-w-4xl px-6 flex flex-col justify-center mb-8" data-aos="fade-up">
     <h2 class="section-title">Leadership & Community Engagement</h2>
     <div class="h-0.5 w-12 bg-accent my-6"></div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 py-12">
       <div class="leadership-card" data-aos="fade-right">
         <h3 class="leadership-title">Volunteer Educator</h3>
         <p class="leadership-date">2023–Present</p>
@@ -211,7 +241,7 @@
     </div>
   </section>
 
-  <section id="contact" class="mx-auto max-w-3xl px-6 text-center" data-aos="fade-up">
+  <section id="contact" class="mx-auto max-w-3xl px-6 text-center pt-0" data-aos="fade-up">
     <h2 class="section-title text-center">Contact Daksh Babbar</h2>
     <div class="h-0.5 w-12 bg-accent my-6 mx-auto"></div>
     <p class="mb-8 text-gray-300">For academic collaborations, research opportunities, or inquiries:</p>
@@ -233,7 +263,7 @@
   </section>
 </main>
 
-<footer class="border-t border-gray-800 mt-24 py-12 text-center text-sm text-gray-500">
+<footer class="border-t border-gray-800 mt-16 py-8 text-center text-sm text-gray-500">
   <div class="mx-auto max-w-6xl px-6">
     <p>© <span id="year"></span> Daksh Babbar. All rights reserved.</p>
   </div>
